@@ -1,136 +1,471 @@
-<html lang="es">
+﻿<html lang='es'>
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Normas Globales: 14 Octubre - Día Mundial de la Normalización</title>
-    <meta name="description" content="Descubre el impacto global de las normas ISO en el Día Mundial de la Normalización. Elegancia, calidad y sostenibilidad para un mundo mejor.">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+    <meta charset='UTF-8' />
+    <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+    <title>Normas Globales: Día Mundial de la Normalización</title>
+    <meta name='description' content='Descubre el impacto global de las normas ISO en el Día Mundial de la Normalización. Certificación UK y servicios profesionales.'>
+    <link href='https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap' rel='stylesheet'>
+    <link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css' rel='stylesheet'>
     <style>
       * {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
       }
+
       body {
         font-family: 'Inter', sans-serif;
         line-height: 1.6;
-        color: #334155;
-        background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
-        min-height: 100vh;
+        color: #1e293b;
+        background: #ffffff;
+        overflow-x: hidden;
       }
-      header {
-        background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
-        color: #fff;
-        padding: 4rem 1.5rem 3rem;
-        text-align: center;
+
+      /* Navigation */
+      nav {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+        transition: all 0.3s ease;
+      }
+
+      nav.scrolled {
+        background: rgba(255, 255, 255, 0.98);
+        box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+      }
+
+      .nav-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 70px;
+      }
+
+      .logo {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: #1e293b;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      .logo i {
+        color: #3b82f6;
+      }
+
+      .nav-menu {
+        display: flex;
+        list-style: none;
+        gap: 2rem;
+      }
+
+      .nav-menu a {
+        text-decoration: none;
+        color: #64748b;
+        font-weight: 500;
+        transition: color 0.3s ease;
         position: relative;
+      }
+
+      .nav-menu a:hover,
+      .nav-menu a.active {
+        color: #3b82f6;
+      }
+
+      .nav-menu a::after {
+        content: '';
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: #3b82f6;
+        transition: width 0.3s ease;
+      }
+
+      .nav-menu a:hover::after,
+      .nav-menu a.active::after {
+        width: 100%;
+      }
+
+      .mobile-menu-toggle {
+        display: none;
+        flex-direction: column;
+        cursor: pointer;
+      }
+
+      .mobile-menu-toggle span {
+        width: 25px;
+        height: 3px;
+        background: #1e293b;
+        margin: 3px 0;
+        transition: 0.3s;
+      }
+
+      /* Hero Section */
+      .hero {
+        height: 100vh;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: white;
         overflow: hidden;
       }
-      header::before {
+
+      .hero::before {
         content: '';
         position: absolute;
         top: 0;
         left: 0;
         right: 0;
         bottom: 0;
-        background: rgba(0,0,0,0.05);
-        pointer-events: none;
+        background: url('https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200&h=800&fit=crop') center/cover;
+        opacity: 0.3;
       }
-      .main-title {
-        font-size: 2.5rem;
-        font-weight: 900;
-        margin-bottom: 0.5rem;
-        letter-spacing: -1px;
-        text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+
+      .hero-content {
         position: relative;
         z-index: 1;
+        max-width: 800px;
+        padding: 0 2rem;
         animation: fadeInUp 1s ease-out;
       }
-      .subtitle {
-        font-size: 1.2rem;
-        color: #60a5fa;
-        font-weight: 600;
+
+      .hero-title {
+        font-size: 4rem;
+        font-weight: 900;
+        margin-bottom: 1rem;
+        line-height: 1.1;
+        text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+      }
+
+      .hero-subtitle {
+        font-size: 1.5rem;
+        font-weight: 300;
         margin-bottom: 2rem;
-        position: relative;
-        z-index: 1;
-        animation: fadeInUp 1s ease-out 0.2s both;
+        opacity: 0.9;
       }
-      .cta-btns {
+
+      .hero-buttons {
         display: flex;
+        gap: 1rem;
         justify-content: center;
-        gap: 1.5rem;
-        margin-top: 2rem;
-        position: relative;
-        z-index: 1;
-        animation: fadeInUp 1s ease-out 0.4s both;
+        flex-wrap: wrap;
       }
+
       .btn {
         padding: 1rem 2rem;
-        border-radius: 50px;
-        font-size: 1rem;
-        font-weight: 600;
-        color: #fff;
-        background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
-        text-decoration: none;
-        box-shadow: 0 4px 15px rgba(59,130,246,0.3);
-        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         border: none;
+        border-radius: 50px;
+        font-size: 1.1rem;
+        font-weight: 600;
         cursor: pointer;
+        transition: all 0.3s ease;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      .btn-primary {
+        background: #3b82f6;
+        color: white;
+        box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
+      }
+
+      .btn-primary:hover {
+        background: #2563eb;
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba(59, 130, 246, 0.6);
+      }
+
+      .btn-secondary {
+        background: transparent;
+        color: white;
+        border: 2px solid white;
+      }
+
+      .btn-secondary:hover {
+        background: white;
+        color: #667eea;
+        transform: translateY(-2px);
+      }
+
+      /* About Section */
+      .about {
+        padding: 5rem 2rem;
+        background: #f8fafc;
+      }
+
+      .section-container {
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .section-title {
+        font-size: 2.5rem;
+        font-weight: 700;
+        text-align: center;
+        margin-bottom: 1rem;
+        color: #1e293b;
+      }
+
+      .section-subtitle {
+        font-size: 1.2rem;
+        color: #64748b;
+        text-align: center;
+        margin-bottom: 3rem;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .about-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+        align-items: center;
+      }
+
+      .about-text {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        color: #475569;
+      }
+
+      .about-image {
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        position: relative;
+      }
+
+      .about-image img {
+        width: 100%;
+        height: 400px;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+      }
+
+      .about-image:hover img {
+        transform: scale(1.05);
+      }
+
+      /* Services Section */
+      .services {
+        padding: 5rem 2rem;
+        background: white;
+      }
+
+      .services-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        margin-top: 3rem;
+      }
+
+      .service-card {
+        background: white;
+        padding: 2rem;
+        border-radius: 15px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+        border: 1px solid #e2e8f0;
         position: relative;
         overflow: hidden;
       }
-      .btn::before {
+
+      .service-card::before {
         content: '';
         position: absolute;
         top: 0;
-        left: -100%;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-        transition: left 0.5s;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+        transform: scaleX(0);
+        transition: transform 0.3s ease;
       }
-      .btn:hover::before {
-        left: 100%;
+
+      .service-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
       }
-      .btn:hover {
-        transform: translateY(-3px) scale(1.05);
-        box-shadow: 0 8px 25px rgba(59,130,246,0.4);
+
+      .service-card:hover::before {
+        transform: scaleX(1);
       }
-      .btn.alt {
-        background: linear-gradient(135deg, #10b981 0%, #059669 100%);
-        box-shadow: 0 4px 15px rgba(16,185,129,0.3);
+
+      .service-icon {
+        font-size: 2.5rem;
+        color: #3b82f6;
+        margin-bottom: 1rem;
       }
-      .btn.alt:hover {
-        box-shadow: 0 8px 25px rgba(16,185,129,0.4);
+
+      .service-title {
+        font-size: 1.3rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+        color: #1e293b;
       }
-      .counter {
-        margin-top: 2rem;
+
+      .service-description {
+        color: #64748b;
+        line-height: 1.6;
+      }
+
+      /* Certifications Section */
+      .certifications {
+        padding: 5rem 2rem;
+        background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+      }
+
+      .cert-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+        margin-top: 3rem;
+      }
+
+      .cert-card {
+        background: white;
+        padding: 2rem;
+        border-radius: 15px;
+        text-align: center;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+        border: 1px solid #e2e8f0;
+      }
+
+      .cert-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+      }
+
+      .cert-icon {
+        font-size: 3rem;
+        color: #10b981;
+        margin-bottom: 1rem;
+      }
+
+      .cert-title {
         font-size: 1.2rem;
-        color: #e2e8f0;
-        position: relative;
-        z-index: 1;
-        animation: fadeInUp 1s ease-out 0.6s both;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+        color: #1e293b;
       }
-      .counter span {
-        font-size: 2rem;
-        font-weight: 900;
-        color: #60a5fa;
+
+      .cert-description {
+        color: #64748b;
+        font-size: 0.9rem;
       }
-      section {
+
+      /* Contact Section */
+      .contact {
+        padding: 5rem 2rem;
+        background: #1e293b;
+        color: white;
+      }
+
+      .contact-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+        margin-top: 3rem;
+      }
+
+      .contact-info h3,
+      .contact-form h3 {
+        font-size: 1.8rem;
+        margin-bottom: 1.5rem;
+        color: #3b82f6;
+      }
+
+      .contact-item {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .contact-item i {
+        font-size: 1.2rem;
+        color: #3b82f6;
+        width: 20px;
+      }
+
+      .contact-form .form-group {
+        margin-bottom: 1.5rem;
+      }
+
+      .contact-form label {
+        display: block;
+        margin-bottom: 0.5rem;
+        font-weight: 500;
+      }
+
+      .contact-form input,
+      .contact-form textarea {
+        width: 100%;
+        padding: 1rem;
+        border: 1px solid #475569;
+        border-radius: 8px;
+        background: #334155;
+        color: white;
+        font-family: 'Inter', sans-serif;
+      }
+
+      .contact-form input:focus,
+      .contact-form textarea:focus {
+        outline: none;
+        border-color: #3b82f6;
+        box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+      }
+
+      /* Footer */
+      footer {
+        background: #0f172a;
+        color: #64748b;
+        padding: 3rem 2rem 1rem;
+        text-align: center;
+      }
+
+      .footer-content {
         max-width: 1200px;
         margin: 0 auto;
-        padding: 4rem 1.5rem;
-        opacity: 0;
-        transform: translateY(30px);
-        animation: fadeInUp 1s ease-out both;
-        animation-delay: 0.2s;
       }
-      section:nth-child(2) { animation-delay: 0.4s; }
-      section:nth-child(3) { animation-delay: 0.6s; }
-      section:nth-child(4) { animation-delay: 0.8s; }
-      section:nth-child(5) { animation-delay: 1s; }
-      section:nth-child(6) { animation-delay: 1.2s; }
-      section:nth-child(7) { animation-delay: 1.4s; }
+
+      .footer-links {
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        margin-bottom: 2rem;
+        flex-wrap: wrap;
+      }
+
+      .footer-links a {
+        color: #64748b;
+        text-decoration: none;
+        transition: color 0.3s ease;
+      }
+
+      .footer-links a:hover {
+        color: #3b82f6;
+      }
+
+      /* Animations */
       @keyframes fadeInUp {
         from {
           opacity: 0;
@@ -141,196 +476,389 @@
           transform: translateY(0);
         }
       }
+
+      /* Responsive Design */
       @media (max-width: 768px) {
-        .cta-btns {
+        .nav-menu {
+          display: none;
+        }
+
+        .mobile-menu-toggle {
+          display: flex;
+        }
+
+        .hero-title {
+          font-size: 2.5rem;
+        }
+
+        .hero-subtitle {
+          font-size: 1.2rem;
+        }
+
+        .about-content {
+          grid-template-columns: 1fr;
+          gap: 2rem;
+        }
+
+        .contact-grid {
+          grid-template-columns: 1fr;
+          gap: 2rem;
+        }
+
+        .footer-links {
           flex-direction: column;
           gap: 1rem;
         }
       }
-      .counter {
-        margin-top: 2rem;
-        font-size: 1.2rem;
-        color: #e2e8f0;
-        position: relative;
-        z-index: 1;
-      }
-      .counter span {
-        font-size: 2rem;
-        font-weight: 900;
-        color: #60a5fa;
-      }
-      section {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 4rem 1.5rem;
-      }
-      .section-title {
-        font-size: 2rem;
-        font-weight: 900;
-        margin-bottom: 1rem;
-        text-align: center;
-      }
-      .intro-text {
-        font-size: 1.15rem;
-        max-width: 600px;
-        margin: 0 auto 2rem auto;
-        text-align: center;
-        line-height: 1.7;
-      }
-      footer {
-        background: #1e293b;
-        color: #e2e8f0;
-        padding: 3rem 1.5rem 2rem;
-        text-align: center;
-      }
-      footer p {
-        margin: 0;
-        font-size: 0.95rem;
-      }
-    </style>
-    <script>
-      // Contador animado de normas ISO
-      document.addEventListener('DOMContentLoaded', function() {
-        const counter = document.getElementById('iso-counter');
-        if (counter) {
-          let val = 0;
-          const end = 25000;
-          const duration = 1800;
-          const step = Math.ceil(end / (duration / 16));
-          function animate() {
-            val += step;
-            if (val >= end) { val = end; }
-            counter.textContent = val.toLocaleString();
-            if (val < end) requestAnimationFrame(animate);
-          }
-          animate();
+
+      @media (max-width: 480px) {
+        .hero-buttons {
+          flex-direction: column;
+          align-items: center;
         }
 
-        // Animaciones de scroll
-        const observerOptions = {
-          threshold: 0.1,
-          rootMargin: '0px 0px -50px 0px'
-        };
+        .btn {
+          width: 100%;
+          max-width: 300px;
+          justify-content: center;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav id='navbar'>
+      <div class='nav-container'>
+        <a href='#' class='logo'>
+          <i class='fas fa-globe'></i>
+          Normas Globales
+        </a>
+        <ul class='nav-menu'>
+          <li><a href='#inicio' class='active'>Inicio</a></li>
+          <li><a href='#acerca'>Acerca de</a></li>
+          <li><a href='#servicios'>Servicios</a></li>
+          <li><a href='#certificaciones'>Certificaciones</a></li>
+          <li><a href='#certificacion-uk'>Certificación UK</a></li>
+          <li><a href='#contacto'>Contacto</a></li>
+        </ul>
+        <div class='mobile-menu-toggle'>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </nav>
 
-        const observer = new IntersectionObserver((entries) => {
-          entries.forEach(entry => {
-            if (entry.isIntersecting) {
-              entry.target.style.opacity = '1';
-              entry.target.style.transform = 'translateY(0)';
-            }
-          });
-        }, observerOptions);
+    <!-- Hero Section -->
+    <section id='inicio' class='hero'>
+      <div class='hero-content'>
+        <h1 class='hero-title'>Día Mundial de la Normalización</h1>
+        <p class='hero-subtitle'>14 de Octubre - Construyendo un mundo mejor a través de estándares globales</p>
+        <div class='hero-buttons'>
+          <a href='#acerca' class='btn btn-primary'>
+            <i class='fas fa-info-circle'></i>
+            Descubre Más
+          </a>
+          <a href='#contacto' class='btn btn-secondary'>
+            <i class='fas fa-envelope'></i>
+            Contáctanos
+          </a>
+        </div>
+      </div>
+    </section>
 
-        // Observar todas las secciones
-        document.querySelectorAll('section').forEach(section => {
-          observer.observe(section);
-        });
+    <!-- About Section -->
+    <section id='acerca' class='about'>
+      <div class='section-container'>
+        <h2 class='section-title'>Acerca del Día Mundial de la Normalización</h2>
+        <p class='section-subtitle'>Cada 14 de octubre celebramos el poder transformador de las normas internacionales</p>
+        <div class='about-content'>
+          <div class='about-text'>
+            <p>El Día Mundial de la Normalización, establecido por la ISO en 1970, destaca la importancia de las normas internacionales en nuestra vida cotidiana. Desde la seguridad de los productos que usamos hasta la protección del medio ambiente, las normas ISO contribuyen a mejorar la calidad de vida en todo el mundo.</p>
+            <br>
+            <p>Este año, nos enfocamos en cómo las normas ayudan a construir un futuro sostenible, promoviendo la innovación, facilitando el comercio internacional y asegurando que los productos y servicios cumplan con los más altos estándares de calidad y seguridad.</p>
+          </div>
+          <div class='about-image'>
+            <img src='https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=400&fit=crop' alt='Normas ISO en acción'>
+          </div>
+        </div>
+      </div>
+    </section>
 
-        // Efectos de hover para tarjetas ISO
-        document.querySelectorAll('div[style*="background: #fff"]').forEach(card => {
-          card.addEventListener('mouseenter', function() {
-            this.style.transform = 'translateY(-8px) scale(1.02)';
-            this.style.boxShadow = '0 12px 40px rgba(59,130,246,0.15)';
-          });
-          card.addEventListener('mouseleave', function() {
-            this.style.transform = 'translateY(0) scale(1)';
-            this.style.boxShadow = '0 4px 20px rgba(0,0,0,0.08)';
-          });
-        });
+    <!-- Services Section -->
+    <section id='servicios' class='services'>
+      <div class='section-container'>
+        <h2 class='section-title'>Nuestros Servicios</h2>
+        <p class='section-subtitle'>Soluciones integrales para la implementación de normas ISO</p>
+        <div class='services-grid'>
+          <div class='service-card'>
+            <div class='service-icon'>
+              <i class='fas fa-certificate'></i>
+            </div>
+            <h3 class='service-title'>Certificación ISO</h3>
+            <p class='service-description'>Obtén certificaciones reconocidas internacionalmente para demostrar el compromiso de tu organización con la calidad y la excelencia.</p>
+          </div>
+          <div class='service-card'>
+            <div class='service-icon'>
+              <i class='fas fa-users'></i>
+            </div>
+            <h3 class='service-title'>Capacitación</h3>
+            <p class='service-description'>Programas de formación especializados para equipos directivos y operativos en la implementación de sistemas de gestión.</p>
+          </div>
+          <div class='service-card'>
+            <div class='service-icon'>
+              <i class='fas fa-chart-line'></i>
+            </div>
+            <h3 class='service-title'>Consultoría</h3>
+            <p class='service-description'>Asesoramiento experto para la implementación efectiva de normas ISO adaptadas a las necesidades específicas de tu organización.</p>
+          </div>
+          <div class='service-card'>
+            <div class='service-icon'>
+              <i class='fas fa-search'></i>
+            </div>
+            <h3 class='service-title'>Auditorías</h3>
+            <p class='service-description'>Evaluaciones independientes para verificar el cumplimiento de las normas y identificar oportunidades de mejora.</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-        // Efecto de parallax sutil en el header
-        window.addEventListener('scroll', function() {
-          const scrolled = window.pageYOffset;
-          const header = document.querySelector('header');
-          if (header) {
-            const bgPos = -(scrolled * 0.5) + 'px';
-            header.style.backgroundPositionY = bgPos;
+    <!-- Certifications Section -->
+    <section id='certificaciones' class='certifications'>
+      <div class='section-container'>
+        <h2 class='section-title'>Certificaciones Disponibles</h2>
+        <p class='section-subtitle'>Amplia gama de normas ISO para diferentes sectores e industrias</p>
+        <div class='cert-grid'>
+          <div class='cert-card'>
+            <div class='cert-icon'>
+              <i class='fas fa-shield-alt'></i>
+            </div>
+            <h3 class='cert-title'>ISO 9001</h3>
+            <p class='cert-description'>Sistema de Gestión de Calidad</p>
+          </div>
+          <div class='cert-card'>
+            <div class='cert-icon'>
+              <i class='fas fa-leaf'></i>
+            </div>
+            <h3 class='cert-title'>ISO 14001</h3>
+            <p class='cert-description'>Sistema de Gestión Ambiental</p>
+          </div>
+          <div class='cert-card'>
+            <div class='cert-icon'>
+              <i class='fas fa-hard-hat'></i>
+            </div>
+            <h3 class='cert-title'>ISO 45001</h3>
+            <p class='cert-description'>Sistema de Gestión de Seguridad y Salud</p>
+          </div>
+          <div class='cert-card'>
+            <div class='cert-icon'>
+              <i class='fas fa-lock'></i>
+            </div>
+            <h3 class='cert-title'>ISO 27001</h3>
+            <p class='cert-description'>Sistema de Gestión de Seguridad de la Información</p>
+          </div>
+          <div class='cert-card'>
+            <div class='cert-icon'>
+              <i class='fas fa-utensils'></i>
+            </div>
+            <h3 class='cert-title'>ISO 22000</h3>
+            <p class='cert-description'>Sistema de Gestión de Inocuidad de los Alimentos</p>
+          </div>
+          <div class='cert-card'>
+            <div class='cert-icon'>
+              <i class='fas fa-heartbeat'></i>
+            </div>
+            <h3 class='cert-title'>ISO 13485</h3>
+            <p class='cert-description'>Dispositivos Médicos</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- UK Certification Section -->
+    <section id='certificacion-uk' class='about'>
+      <div class='section-container'>
+        <h2 class='section-title'>Certificación UK</h2>
+        <p class='section-subtitle'>Certificaciones reconocidas por el Reino Unido y la Unión Europea</p>
+        <div class='about-content'>
+          <div class='about-image'>
+            <img src='https://images.unsplash.com/photo-1544966503-7cc5ac882d5f?w=600&h=400&fit=crop' alt='Certificación UK'>
+          </div>
+          <div class='about-text'>
+            <p>Ofrecemos servicios especializados en certificaciones reconocidas por las autoridades del Reino Unido, incluyendo estándares específicos para el mercado británico y europeo. Nuestros expertos te guiarán a través del proceso de certificación UK, asegurando que tu organización cumpla con todos los requisitos regulatorios.</p>
+            <br>
+            <p>Ya sea que busques certificaciones para productos, servicios o sistemas de gestión, nuestro equipo de consultores certificados te proporcionará el apoyo necesario para obtener y mantener tus certificaciones UK con confianza.</p>
+            <br>
+            <a href='#contacto' class='btn btn-primary'>
+              <i class='fas fa-envelope'></i>
+              Solicitar Información
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id='contacto' class='contact'>
+      <div class='section-container'>
+        <h2 class='section-title'>Contáctanos</h2>
+        <p class='section-subtitle'>Estamos aquí para ayudarte en tu camino hacia la excelencia</p>
+        <div class='contact-grid'>
+          <div class='contact-info'>
+            <h3>Información de Contacto</h3>
+            <div class='contact-item'>
+              <i class='fas fa-map-marker-alt'></i>
+              <div>
+                <strong>Dirección</strong><br>
+                Santiago, Chile
+              </div>
+            </div>
+            <div class='contact-item'>
+              <i class='fas fa-phone'></i>
+              <div>
+                <strong>Teléfono</strong><br>
+                +56 9 1234 5678
+              </div>
+            </div>
+            <div class='contact-item'>
+              <i class='fas fa-envelope'></i>
+              <div>
+                <strong>Email</strong><br>
+                info@normasglobales.cl
+              </div>
+            </div>
+            <div class='contact-item'>
+              <i class='fas fa-clock'></i>
+              <div>
+                <strong>Horario</strong><br>
+                Lunes a Viernes: 9:00 - 18:00
+              </div>
+            </div>
+          </div>
+          <div class='contact-form'>
+            <h3>Envíanos un Mensaje</h3>
+            <form>
+              <div class='form-group'>
+                <label for='name'>Nombre</label>
+                <input type='text' id='name' name='name' required>
+              </div>
+              <div class='form-group'>
+                <label for='email'>Email</label>
+                <input type='email' id='email' name='email' required>
+              </div>
+              <div class='form-group'>
+                <label for='message'>Mensaje</label>
+                <textarea id='message' name='message' rows='5' required></textarea>
+              </div>
+              <button type='submit' class='btn btn-primary'>
+                <i class='fas fa-paper-plane'></i>
+                Enviar Mensaje
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class='footer-content'>
+        <div class='footer-links'>
+          <a href='#inicio'>Inicio</a>
+          <a href='#acerca'>Acerca de</a>
+          <a href='#servicios'>Servicios</a>
+          <a href='#certificaciones'>Certificaciones</a>
+          <a href='#certificacion-uk'>Certificación UK</a>
+          <a href='#contacto'>Contacto</a>
+        </div>
+        <p>&copy; 2024 Normas Globales. Todos los derechos reservados. | Día Mundial de la Normalización - 14 de Octubre</p>
+      </div>
+    </footer>
+
+    <script>
+      // Navigation scroll effect
+      window.addEventListener('scroll', function() {
+        const navbar = document.getElementById('navbar');
+        if (window.scrollY > 50) {
+          navbar.classList.add('scrolled');
+        } else {
+          navbar.classList.remove('scrolled');
+        }
+      });
+
+      // Smooth scrolling for navigation links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute('href'));
+          if (target) {
+            target.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            });
           }
         });
       });
+
+      // Active navigation link on scroll
+      window.addEventListener('scroll', function() {
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('.nav-menu a');
+
+        let current = '';
+        sections.forEach(section => {
+          const sectionTop = section.offsetTop - 100;
+          if (pageYOffset >= sectionTop) {
+            current = section.getAttribute('id');
+          }
+        });
+
+        navLinks.forEach(link => {
+          link.classList.remove('active');
+          if (link.getAttribute('href').substring(1) === current) {
+            link.classList.add('active');
+          }
+        });
+      });
+
+      // Mobile menu toggle
+      const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+      const navMenu = document.querySelector('.nav-menu');
+
+      mobileMenuToggle.addEventListener('click', function() {
+        navMenu.classList.toggle('active');
+        this.classList.toggle('active');
+      });
+
+      // Form submission (placeholder)
+      document.querySelector('form').addEventListener('submit', function(e) {
+        e.preventDefault();
+        alert('¡Gracias por tu mensaje! Te contactaremos pronto.');
+        this.reset();
+      });
+
+      // Animation on scroll
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+      };
+
+      const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+          }
+        });
+      }, observerOptions);
+
+      // Observe elements for animation
+      document.querySelectorAll('.service-card, .cert-card').forEach(card => {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(30px)';
+        card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        observer.observe(card);
+      });
     </script>
-  </head>
-  <body>
-    <header>
-      <div class="main-title">14 de Octubre: El Día Que el Mundo se Pone de Acuerdo</div>
-      <div class="subtitle">Día Mundial de la Normalización</div>
-      <div class="cta-btns">
-        <a href="#certificaciones" class="btn">Certificaciones</a>
-        <a href="#contacto" class="btn alt">Contacto</a>
-      </div>
-      <div class="counter">
-        Más de <span id="iso-counter">0</span> normas ISO impulsando la calidad global
-      </div>
-    </header>
-
-    <section>
-      <h2 class="section-title">¿Qué es una Norma ISO?</h2>
-      <p class="intro-text">
-        Las normas ISO son acuerdos internacionales que garantizan calidad, seguridad y eficiencia en productos, servicios y sistemas. El 14 de octubre celebramos el impacto de la normalización en la vida diaria y el comercio global, impulsado por ISO, IEC e ITU.
-      </p>
-    </section>
-
-    <section>
-      <h2 class="section-title">Historia en Línea de Tiempo</h2>
-      <div style="border-left: 4px solid #3b82f6; margin: 2rem 0 2rem 1.5rem; padding-left: 2rem;">
-        <div style="margin-bottom: 3rem; background: #fff; border-radius: 12px; padding: 1.5rem; box-shadow: 0 4px 20px rgba(0,0,0,0.08);">
-          <div style="font-weight: 700; font-size: 1.3rem; margin-bottom: 0.3rem; color: #1e293b;">1947: Fundación de ISO</div>
-          <div style="color: #64748b; font-size: 0.95rem; font-weight: 600; margin-bottom: 0.8rem;">Ginebra, Suiza</div>
-          <p>Se crea la Organización Internacional de Normalización con 25 países miembros.</p>
-        </div>
-        <div style="margin-bottom: 3rem; background: #fff; border-radius: 12px; padding: 1.5rem; box-shadow: 0 4px 20px rgba(0,0,0,0.08);">
-          <div style="font-weight: 700; font-size: 1.3rem; margin-bottom: 0.3rem; color: #1e293b;">1970: Primera Norma ISO 9000</div>
-          <div style="color: #64748b; font-size: 0.95rem; font-weight: 600; margin-bottom: 0.8rem;">Calidad y Gestión</div>
-          <p>Publicación de la primera familia de normas para sistemas de gestión de calidad.</p>
-        </div>
-        <div style="margin-bottom: 3rem; background: #fff; border-radius: 12px; padding: 1.5rem; box-shadow: 0 4px 20px rgba(0,0,0,0.08);">
-          <div style="font-weight: 700; font-size: 1.3rem; margin-bottom: 0.3rem; color: #1e293b;">1996: ISO 14000</div>
-          <div style="color: #64748b; font-size: 0.95rem; font-weight: 600; margin-bottom: 0.8rem;">Medio Ambiente</div>
-          <p>Lanzamiento de normas para gestión ambiental y sostenibilidad.</p>
-        </div>
-        <div style="margin-bottom: 3rem; background: #fff; border-radius: 12px; padding: 1.5rem; box-shadow: 0 4px 20px rgba(0,0,0,0.08);">
-          <div style="font-weight: 700; font-size: 1.3rem; margin-bottom: 0.3rem; color: #1e293b;">2023: Día Mundial de la Normalización</div>
-          <div style="color: #64748b; font-size: 0.95rem; font-weight: 600; margin-bottom: 0.8rem;">14 de Octubre</div>
-          <p>Establecido para celebrar el impacto de las normas en la sociedad global.</p>
-        </div>
-      </div>
-    </section>
-
-    <section id="certificaciones">
-      <h2 class="section-title">Normas ISO Destacadas</h2>
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-top: 2rem;">
-        <div style="background: #fff; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); padding: 2.5rem 2rem; text-align: center;">
-          <div style="font-weight: 700; font-size: 1.1rem; margin-bottom: 0.5rem; color: #2563eb;">ISO 9001</div>
-          <div style="font-size: 0.98rem; color: #444; opacity: 0.85; min-height: 48px;">Sistema de Gestión de Calidad - Excelencia operacional y satisfacción del cliente.</div>
-        </div>
-        <div style="background: #fff; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); padding: 2.5rem 2rem; text-align: center;">
-          <div style="font-weight: 700; font-size: 1.1rem; margin-bottom: 0.5rem; color: #2563eb;">ISO 14001</div>
-          <div style="font-size: 0.98rem; color: #444; opacity: 0.85; min-height: 48px;">Sistema de Gestión Ambiental - Sostenibilidad y responsabilidad ecológica.</div>
-        </div>
-        <div style="background: #fff; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); padding: 2.5rem 2rem; text-align: center;">
-          <div style="font-weight: 700; font-size: 1.1rem; margin-bottom: 0.5rem; color: #2563eb;">ISO 45001</div>
-          <div style="font-size: 0.98rem; color: #444; opacity: 0.85; min-height: 48px;">Sistema de Gestión de Seguridad y Salud en el Trabajo - Protección de trabajadores.</div>
-        </div>
-      </div>
-    </section>
-
-    <section>
-      <h2 class="section-title">El Futuro de la Normalización</h2>
-      <div style="background: linear-gradient(90deg, #2563eb 0%, #10b981 100%); color: #fff; border-radius: 1rem; padding: 2.5rem 1.5rem; margin-top: 2rem; text-align: center;">
-        <p style="font-size: 1.1rem; max-width: 600px; margin: 0 auto;">Las normas ISO son herramientas clave para alcanzar los Objetivos de Desarrollo Sostenible (ODS): energía limpia, acción climática, innovación y más. El lema 2025: <b>"Normas para un mundo mejor"</b>.</p>
-      </div>
-    </section>
-
-    <section id="contacto">
-      <h2 style="font-size: 1.5rem; font-weight: 800; margin-bottom: 1rem; text-align: center;">Contacto</h2>
-      <p style="font-size: 1.1rem; max-width: 500px; margin: 0 auto 2rem auto; text-align: center;">¿Tienes dudas sobre las normas ISO o quieres saber cómo certificarte? Escríbenos y te ayudamos a impulsar tu organización.</p>
-      <div style="text-align: center;">
-        <a href="mailto:info@normasglobales.com" style="display: inline-block; padding: 1rem 2.5rem; border-radius: 50px; font-size: 1.1rem; font-weight: 700; color: #fff; background: #10b981; text-decoration: none; box-shadow: 0 4px 15px rgba(16,185,129,0.3);">Enviar Correo</a>
-      </div>
-    </section>
-
-    <footer>
-      <p>&copy; 2025 Día Mundial de la Normalización. Desarrollado con ❤️ para promover la excelencia global.</p>
-    </footer>
   </body>
 </html>

@@ -1,0 +1,336 @@
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Normas Globales: 14 Octubre - Día Mundial de la Normalización</title>
+    <meta name="description" content="Descubre el impacto global de las normas ISO en el Día Mundial de la Normalización. Elegancia, calidad y sostenibilidad para un mundo mejor.">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: 'Inter', sans-serif;
+        line-height: 1.6;
+        color: #334155;
+        background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+        min-height: 100vh;
+      }
+      header {
+        background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+        color: #fff;
+        padding: 4rem 1.5rem 3rem;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
+      header::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0,0,0,0.05);
+        pointer-events: none;
+      }
+      .main-title {
+        font-size: 2.5rem;
+        font-weight: 900;
+        margin-bottom: 0.5rem;
+        letter-spacing: -1px;
+        text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        position: relative;
+        z-index: 1;
+        animation: fadeInUp 1s ease-out;
+      }
+      .subtitle {
+        font-size: 1.2rem;
+        color: #60a5fa;
+        font-weight: 600;
+        margin-bottom: 2rem;
+        position: relative;
+        z-index: 1;
+        animation: fadeInUp 1s ease-out 0.2s both;
+      }
+      .cta-btns {
+        display: flex;
+        justify-content: center;
+        gap: 1.5rem;
+        margin-top: 2rem;
+        position: relative;
+        z-index: 1;
+        animation: fadeInUp 1s ease-out 0.4s both;
+      }
+      .btn {
+        padding: 1rem 2rem;
+        border-radius: 50px;
+        font-size: 1rem;
+        font-weight: 600;
+        color: #fff;
+        background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+        text-decoration: none;
+        box-shadow: 0 4px 15px rgba(59,130,246,0.3);
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        border: none;
+        cursor: pointer;
+        position: relative;
+        overflow: hidden;
+      }
+      .btn::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+        transition: left 0.5s;
+      }
+      .btn:hover::before {
+        left: 100%;
+      }
+      .btn:hover {
+        transform: translateY(-3px) scale(1.05);
+        box-shadow: 0 8px 25px rgba(59,130,246,0.4);
+      }
+      .btn.alt {
+        background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+        box-shadow: 0 4px 15px rgba(16,185,129,0.3);
+      }
+      .btn.alt:hover {
+        box-shadow: 0 8px 25px rgba(16,185,129,0.4);
+      }
+      .counter {
+        margin-top: 2rem;
+        font-size: 1.2rem;
+        color: #e2e8f0;
+        position: relative;
+        z-index: 1;
+        animation: fadeInUp 1s ease-out 0.6s both;
+      }
+      .counter span {
+        font-size: 2rem;
+        font-weight: 900;
+        color: #60a5fa;
+      }
+      section {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 4rem 1.5rem;
+        opacity: 0;
+        transform: translateY(30px);
+        animation: fadeInUp 1s ease-out both;
+        animation-delay: 0.2s;
+      }
+      section:nth-child(2) { animation-delay: 0.4s; }
+      section:nth-child(3) { animation-delay: 0.6s; }
+      section:nth-child(4) { animation-delay: 0.8s; }
+      section:nth-child(5) { animation-delay: 1s; }
+      section:nth-child(6) { animation-delay: 1.2s; }
+      section:nth-child(7) { animation-delay: 1.4s; }
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      @media (max-width: 768px) {
+        .cta-btns {
+          flex-direction: column;
+          gap: 1rem;
+        }
+      }
+      .counter {
+        margin-top: 2rem;
+        font-size: 1.2rem;
+        color: #e2e8f0;
+        position: relative;
+        z-index: 1;
+      }
+      .counter span {
+        font-size: 2rem;
+        font-weight: 900;
+        color: #60a5fa;
+      }
+      section {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 4rem 1.5rem;
+      }
+      .section-title {
+        font-size: 2rem;
+        font-weight: 900;
+        margin-bottom: 1rem;
+        text-align: center;
+      }
+      .intro-text {
+        font-size: 1.15rem;
+        max-width: 600px;
+        margin: 0 auto 2rem auto;
+        text-align: center;
+        line-height: 1.7;
+      }
+      footer {
+        background: #1e293b;
+        color: #e2e8f0;
+        padding: 3rem 1.5rem 2rem;
+        text-align: center;
+      }
+      footer p {
+        margin: 0;
+        font-size: 0.95rem;
+      }
+    </style>
+    <script>
+      // Contador animado de normas ISO
+      document.addEventListener('DOMContentLoaded', function() {
+        const counter = document.getElementById('iso-counter');
+        if (counter) {
+          let val = 0;
+          const end = 25000;
+          const duration = 1800;
+          const step = Math.ceil(end / (duration / 16));
+          function animate() {
+            val += step;
+            if (val >= end) { val = end; }
+            counter.textContent = val.toLocaleString();
+            if (val < end) requestAnimationFrame(animate);
+          }
+          animate();
+        }
+
+        // Animaciones de scroll
+        const observerOptions = {
+          threshold: 0.1,
+          rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.style.opacity = '1';
+              entry.target.style.transform = 'translateY(0)';
+            }
+          });
+        }, observerOptions);
+
+        // Observar todas las secciones
+        document.querySelectorAll('section').forEach(section => {
+          observer.observe(section);
+        });
+
+        // Efectos de hover para tarjetas ISO
+        document.querySelectorAll('div[style*="background: #fff"]').forEach(card => {
+          card.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-8px) scale(1.02)';
+            this.style.boxShadow = '0 12px 40px rgba(59,130,246,0.15)';
+          });
+          card.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0) scale(1)';
+            this.style.boxShadow = '0 4px 20px rgba(0,0,0,0.08)';
+          });
+        });
+
+        // Efecto de parallax sutil en el header
+        window.addEventListener('scroll', function() {
+          const scrolled = window.pageYOffset;
+          const header = document.querySelector('header');
+          if (header) {
+            const bgPos = -(scrolled * 0.5) + 'px';
+            header.style.backgroundPositionY = bgPos;
+          }
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <header>
+      <div class="main-title">14 de Octubre: El Día Que el Mundo se Pone de Acuerdo</div>
+      <div class="subtitle">Día Mundial de la Normalización</div>
+      <div class="cta-btns">
+        <a href="#certificaciones" class="btn">Certificaciones</a>
+        <a href="#contacto" class="btn alt">Contacto</a>
+      </div>
+      <div class="counter">
+        Más de <span id="iso-counter">0</span> normas ISO impulsando la calidad global
+      </div>
+    </header>
+
+    <section>
+      <h2 class="section-title">¿Qué es una Norma ISO?</h2>
+      <p class="intro-text">
+        Las normas ISO son acuerdos internacionales que garantizan calidad, seguridad y eficiencia en productos, servicios y sistemas. El 14 de octubre celebramos el impacto de la normalización en la vida diaria y el comercio global, impulsado por ISO, IEC e ITU.
+      </p>
+    </section>
+
+    <section>
+      <h2 class="section-title">Historia en Línea de Tiempo</h2>
+      <div style="border-left: 4px solid #3b82f6; margin: 2rem 0 2rem 1.5rem; padding-left: 2rem;">
+        <div style="margin-bottom: 3rem; background: #fff; border-radius: 12px; padding: 1.5rem; box-shadow: 0 4px 20px rgba(0,0,0,0.08);">
+          <div style="font-weight: 700; font-size: 1.3rem; margin-bottom: 0.3rem; color: #1e293b;">1947: Fundación de ISO</div>
+          <div style="color: #64748b; font-size: 0.95rem; font-weight: 600; margin-bottom: 0.8rem;">Ginebra, Suiza</div>
+          <p>Se crea la Organización Internacional de Normalización con 25 países miembros.</p>
+        </div>
+        <div style="margin-bottom: 3rem; background: #fff; border-radius: 12px; padding: 1.5rem; box-shadow: 0 4px 20px rgba(0,0,0,0.08);">
+          <div style="font-weight: 700; font-size: 1.3rem; margin-bottom: 0.3rem; color: #1e293b;">1970: Primera Norma ISO 9000</div>
+          <div style="color: #64748b; font-size: 0.95rem; font-weight: 600; margin-bottom: 0.8rem;">Calidad y Gestión</div>
+          <p>Publicación de la primera familia de normas para sistemas de gestión de calidad.</p>
+        </div>
+        <div style="margin-bottom: 3rem; background: #fff; border-radius: 12px; padding: 1.5rem; box-shadow: 0 4px 20px rgba(0,0,0,0.08);">
+          <div style="font-weight: 700; font-size: 1.3rem; margin-bottom: 0.3rem; color: #1e293b;">1996: ISO 14000</div>
+          <div style="color: #64748b; font-size: 0.95rem; font-weight: 600; margin-bottom: 0.8rem;">Medio Ambiente</div>
+          <p>Lanzamiento de normas para gestión ambiental y sostenibilidad.</p>
+        </div>
+        <div style="margin-bottom: 3rem; background: #fff; border-radius: 12px; padding: 1.5rem; box-shadow: 0 4px 20px rgba(0,0,0,0.08);">
+          <div style="font-weight: 700; font-size: 1.3rem; margin-bottom: 0.3rem; color: #1e293b;">2023: Día Mundial de la Normalización</div>
+          <div style="color: #64748b; font-size: 0.95rem; font-weight: 600; margin-bottom: 0.8rem;">14 de Octubre</div>
+          <p>Establecido para celebrar el impacto de las normas en la sociedad global.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="certificaciones">
+      <h2 class="section-title">Normas ISO Destacadas</h2>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-top: 2rem;">
+        <div style="background: #fff; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); padding: 2.5rem 2rem; text-align: center;">
+          <div style="font-weight: 700; font-size: 1.1rem; margin-bottom: 0.5rem; color: #2563eb;">ISO 9001</div>
+          <div style="font-size: 0.98rem; color: #444; opacity: 0.85; min-height: 48px;">Sistema de Gestión de Calidad - Excelencia operacional y satisfacción del cliente.</div>
+        </div>
+        <div style="background: #fff; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); padding: 2.5rem 2rem; text-align: center;">
+          <div style="font-weight: 700; font-size: 1.1rem; margin-bottom: 0.5rem; color: #2563eb;">ISO 14001</div>
+          <div style="font-size: 0.98rem; color: #444; opacity: 0.85; min-height: 48px;">Sistema de Gestión Ambiental - Sostenibilidad y responsabilidad ecológica.</div>
+        </div>
+        <div style="background: #fff; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); padding: 2.5rem 2rem; text-align: center;">
+          <div style="font-weight: 700; font-size: 1.1rem; margin-bottom: 0.5rem; color: #2563eb;">ISO 45001</div>
+          <div style="font-size: 0.98rem; color: #444; opacity: 0.85; min-height: 48px;">Sistema de Gestión de Seguridad y Salud en el Trabajo - Protección de trabajadores.</div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="section-title">El Futuro de la Normalización</h2>
+      <div style="background: linear-gradient(90deg, #2563eb 0%, #10b981 100%); color: #fff; border-radius: 1rem; padding: 2.5rem 1.5rem; margin-top: 2rem; text-align: center;">
+        <p style="font-size: 1.1rem; max-width: 600px; margin: 0 auto;">Las normas ISO son herramientas clave para alcanzar los Objetivos de Desarrollo Sostenible (ODS): energía limpia, acción climática, innovación y más. El lema 2025: <b>"Normas para un mundo mejor"</b>.</p>
+      </div>
+    </section>
+
+    <section id="contacto">
+      <h2 style="font-size: 1.5rem; font-weight: 800; margin-bottom: 1rem; text-align: center;">Contacto</h2>
+      <p style="font-size: 1.1rem; max-width: 500px; margin: 0 auto 2rem auto; text-align: center;">¿Tienes dudas sobre las normas ISO o quieres saber cómo certificarte? Escríbenos y te ayudamos a impulsar tu organización.</p>
+      <div style="text-align: center;">
+        <a href="mailto:info@normasglobales.com" style="display: inline-block; padding: 1rem 2.5rem; border-radius: 50px; font-size: 1.1rem; font-weight: 700; color: #fff; background: #10b981; text-decoration: none; box-shadow: 0 4px 15px rgba(16,185,129,0.3);">Enviar Correo</a>
+      </div>
+    </section>
+
+    <footer>
+      <p>&copy; 2025 Día Mundial de la Normalización. Desarrollado con ❤️ para promover la excelencia global.</p>
+    </footer>
+  </body>
+</html>
