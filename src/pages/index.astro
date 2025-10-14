@@ -70,7 +70,19 @@
         transition: transform 0.3s ease;
       }
 
+      .iso-logo {
+        height: 30px;
+        width: auto;
+        margin-left: 15px;
+        object-fit: contain;
+        transition: transform 0.3s ease;
+      }
+
       .logo:hover .logo-image {
+        transform: scale(1.05);
+      }
+
+      .logo:hover .iso-logo {
         transform: scale(1.05);
       }
 
@@ -571,6 +583,7 @@
       <div class='nav-container'>
         <a href='#' class='logo'>
           <img src='/images/log_2025.png' alt='Logo Día Mundial de la Normalización 2025' class='logo-image'>
+          <img src='https://www.iso.org/themes/custom/iso/logo.svg' alt='ISO - International Organization for Standardization' class='iso-logo'>
         </a>
         <ul class='nav-menu'>
           <li><a href='#inicio' class='active'>Inicio</a></li>
