@@ -64,21 +64,18 @@
         color: #00FFFF; /* Cian para el icono del logo */
       }
 
-      .logo-image {
+      .logo-image, .iso-logo {
         height: 40px;
         width: auto;
         max-width: 200px;
         object-fit: contain;
         transition: transform 0.3s ease;
+        filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.5));
       }
 
       .iso-logo {
-        height: 35px;
-        width: auto;
         max-width: 45px;
         margin-left: 15px;
-        object-fit: contain;
-        transition: transform 0.3s ease;
       }
 
       .logo:hover .logo-image {
@@ -160,8 +157,7 @@
         left: 0;
         right: 0;
         bottom: 0;
-        background: url('https://img.freepik.com/free-photo/programming-background-with-person-working-with-codes-computer_23-2150010125.jpg') center/cover no-repeat;
-        opacity: 0.3; /* Opacidad para oscurecer la imagen */
+        background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://img.freepik.com/free-photo/programming-background-with-person-working-with-codes-computer_23-2150010125.jpg') center/cover no-repeat;
       }
 
       .hero-content {
@@ -627,8 +623,8 @@
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
       }
 
-      /* ISO History Section */
-      .iso-history {
+      /* Tips Section */
+      .tips-section {
         padding: 40px 0;
         background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%);
         border-top: 1px solid #e2e8f0;
@@ -736,7 +732,7 @@
     </section>
 
     <!-- Cybersecurity Tips Section -->
-    <section id='consejos-pymes' class='iso-history'>
+    <section id='consejos-pymes' class='tips-section'>
       <div class='section-container'>
         <h2 class='section-title'>Consejos Prácticos de Seguridad para tu PYME</h2>
         <div class='history-content'>
