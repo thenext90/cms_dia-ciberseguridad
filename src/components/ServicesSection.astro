@@ -1,0 +1,48 @@
+---
+import { ShieldCheck, Wifi, Users, ShieldAlert } from 'lucide-astro';
+
+const services = [
+  {
+    icon: ShieldCheck,
+    title: 'Consultoría ISO 27001',
+    description: 'Guiamos a su PYME en la implementación y certificación de un Sistema de Gestión de Seguridad de la Información (SGSI) robusto y a la medida.'
+  },
+  {
+    icon: ShieldAlert,
+    title: 'Continuidad del Negocio (ISO 22301)',
+    description: 'Desarrollamos planes de continuidad y recuperación ante desastres para asegurar la resiliencia de su operación frente a ciber-incidentes.'
+  },
+  {
+    icon: Users,
+    title: 'Capacitación y Phishing',
+    description: 'Fortalecemos el eslabón más importante: su personal. Realizamos capacitaciones y campañas de phishing simulado para crear una cultura de seguridad.'
+  },
+  {
+    icon: Wifi,
+    title: 'Auditoría de Sistemas y Redes',
+    description: 'Evaluamos la postura de seguridad de su infraestructura tecnológica, identificando vulnerabilidades y recomendando acciones correctivas.'
+  }
+];
+---
+
+<section id="services" class="py-16 sm:py-20 bg-gray-800 text-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center">
+      <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-cyan-300">Nuestros Servicios de Ciberseguridad</h2>
+      <p class="mt-4 text-lg text-gray-300 max-w-2xl mx-auto">
+        Protegemos los activos digitales de su empresa con un enfoque integral y adaptado a las necesidades de las PYMEs en Chile.
+      </p>
+    </div>
+    <div class="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+      {services.map(service => (
+        <div class="bg-gray-900/50 p-6 rounded-lg border border-cyan-700/30 transition-all duration-300 hover:border-cyan-500 hover:shadow-cyan-500/10 hover:shadow-lg">
+          <div class="flex items-center justify-center h-12 w-12 rounded-md bg-cyan-500/10 text-cyan-400 mb-4">
+            <service.icon class="h-6 w-6" />
+          </div>
+          <h3 class="text-lg font-semibold text-white">{service.title}</h3>
+          <p class="mt-2 text-sm text-gray-400">{service.description}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

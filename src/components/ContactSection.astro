@@ -1,0 +1,61 @@
+---
+import { Mail, Phone, MapPin } from 'lucide-astro';
+---
+
+<section id="contact" class="py-16 sm:py-20 bg-gray-800 text-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid lg:grid-cols-2 gap-12">
+      <div class="space-y-6">
+        <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-cyan-300">Contáctenos</h2>
+        <p class="text-lg text-gray-300">
+          ¿Listo para fortalecer la seguridad de su empresa? Hablemos. Ofrecemos una primera consulta sin costo para entender sus necesidades.
+        </p>
+        <div class="space-y-4">
+          <div class="flex items-start space-x-3">
+            <Mail class="h-6 w-6 text-cyan-400 mt-1" />
+            <a href="mailto:contacto@cmsconsultores.cl" class="hover:text-cyan-300">contacto@cmsconsultores.cl</a>
+          </div>
+          <div class="flex items-start space-x-3">
+            <Phone class="h-6 w-6 text-cyan-400 mt-1" />
+            <a href="tel:+56999462223" class="hover:text-cyan-300">+56 9 99462223</a>
+          </div>
+          <div class="flex items-start space-x-3">
+            <MapPin class="h-6 w-6 text-cyan-400 mt-1" />
+            <span>La Reina, Santiago, Chile</span>
+          </div>
+        </div>
+      </div>
+      <div>
+        <form class="bg-gray-900/50 p-8 rounded-lg border border-cyan-700/30 space-y-6">
+          <div>
+            <label for="name" class="block text-sm font-medium text-gray-300 mb-2">Nombre</label>
+            <input type="text" id="name" name="name" class="w-full bg-gray-800 border-gray-700 rounded-md py-2 px-3 focus:ring-cyan-500 focus:border-cyan-500" required>
+          </div>
+          <div>
+            <label for="email" class="block text-sm font-medium text-gray-300 mb-2">Email</label>
+            <input type="email" id="email" name="email" class="w-full bg-gray-800 border-gray-700 rounded-md py-2 px-3 focus:ring-cyan-500 focus:border-cyan-500" required>
+          </div>
+          <div>
+            <label for="message" class="block text-sm font-medium text-gray-300 mb-2">Mensaje</label>
+            <textarea id="message" name="message" rows="4" class="w-full bg-gray-800 border-gray-700 rounded-md py-2 px-3 focus:ring-cyan-500 focus:border-cyan-500" required></textarea>
+          </div>
+          <button type="submit" class="w-full bg-cyan-500 text-gray-900 py-3 rounded-md font-semibold hover:bg-cyan-400 transition-all">
+            Enviar Consulta
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="assessment" class="py-16 bg-gradient-to-r from-blue-900 to-cyan-900 text-white">
+  <div class="max-w-4xl mx-auto px-4 text-center">
+    <h2 class="text-3xl font-bold">Realice una Evaluación Rápida de Seguridad</h2>
+    <p class="mt-4 text-lg text-blue-200">
+      Descubra en pocos minutos el nivel de madurez de su empresa en ciberseguridad y reciba recomendaciones iniciales.
+    </p>
+    <a href="#" class="mt-8 inline-block bg-white text-gray-900 px-8 py-3 rounded-md font-semibold hover:bg-gray-200 transition-all">
+      Comenzar Evaluación
+    </a>
+  </div>
+</section>
